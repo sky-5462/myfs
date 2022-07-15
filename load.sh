@@ -1,0 +1,1 @@
+sudo insmod myfs.ko

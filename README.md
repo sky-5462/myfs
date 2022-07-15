@@ -20,6 +20,15 @@ sky-5462@debian:~/myfs$ sudo dmesg | tail
 [28043.634000] Exit myfs
 ```
 
+加入register_filesystem，确认
+
+```bash
+sky-5462@debian:~/myfs$ ./load.sh
+sky-5462@debian:~/myfs$ cat /proc/filesystems
+# ...
+nodev   myfs
+```
+
 ## Reference
 
 - https://github.com/psankar/simplefs

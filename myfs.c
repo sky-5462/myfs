@@ -4,6 +4,14 @@
 #include <linux/kernel.h>
 
 static int myfs_fill_super(struct super_block *sb, void *data, int silent) {
+    struct inode* inode;
+    inode = new_inode(sb);
+    inode->i_mode = S_IFDIR | 0744;
+    inode->i_size = 0;
+    sb->s_root = d_make_root(inode);
+    if (!sb->s_root)
+        return -ENOMEM;
+
     return 0;
 }
 

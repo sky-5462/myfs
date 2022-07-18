@@ -1,3 +1,6 @@
+#include <linux/buffer_head.h>
+#include <linux/types.h>
+
 #define MYFS_MAGIC 0x5242087
 #define MYFS_BLOCK_SHIFT 12
 #define MYFS_BLOCK_SIZE (1 << MYFS_BLOCK_SHIFT)
@@ -18,6 +21,11 @@ struct myfs_super_block {
     uint32_t root_inode;
 };
 
+struct myfs_sb_info {
+    struct buffer_head* s_sbh;
+    struct myfs_super_block* s_es;
+};
+
 struct myfs_inode {
     uint32_t mode;
     uint32_t size;
@@ -25,4 +33,5 @@ struct myfs_inode {
     uint32_t block_count;
 };
 
+#define MYFS_SUPER_BLOCK_SIZE (sizeof(struct myfs_super_block))
 #define MYFS_INODE_SIZE (sizeof(struct myfs_inode))

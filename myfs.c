@@ -3,6 +3,8 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
+#include "myfs.h"
+
 static int myfs_fill_super(struct super_block *sb, void *data, int silent) {
     struct inode* inode;
     inode = new_inode(sb);

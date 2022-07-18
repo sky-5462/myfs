@@ -61,6 +61,15 @@ sky-5462@debian:~/myfs$ ls -lh /mnt/myfs/
 ls: 无法访问 '/mnt/myfs/': 不是目录
 ```
 
+## 格式化
+
+定义了super_block和inode的数据结构，并格式化镜像文件
+
+```bash
+sky-5462@debian:~/myfs$ gcc myfs_format.c
+sky-5462@debian:~/myfs$ ./a.out image
+```
+
 ## Reference
 
 - https://github.com/psankar/simplefs

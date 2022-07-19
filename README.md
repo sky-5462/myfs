@@ -34,7 +34,7 @@ nodev   myfs
 可以将文件挂载为虚拟块设备，让我们的文件系统更真实点..
 
 ```bash
-sky-5462@debian:~/myfs$ dd if=/dev/zero of=image bs=4K count=1024
+sky-5462@debian:~/myfs$ dd if=/dev/zero of=image bs=4K count=262144
 sky-5462@debian:~/myfs$ sudo losetup /dev/loop0 image
 sky-5462@debian:~/myfs$ sudo mount -t myfs /dev/loop0 /mnt/myfs
 ```

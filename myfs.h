@@ -24,9 +24,9 @@ struct myfs_sb_info {
 
 struct myfs_inode {
     uint32_t mode;
+    uint32_t nlink;
     uint32_t size;
     uint32_t block_start;
-    uint32_t block_count;
 };
 
 #define MYFS_ROOT_INO 1
@@ -34,7 +34,7 @@ struct myfs_inode {
 struct myfs_dentry {
     uint32_t ino;
     uint32_t name_len;
-    char name[256 - 2 * sizeof(uint32_t)];  // without '\n'
+    char name[256 - 2 * sizeof(uint32_t)];  // without '\0'
 };
 
 #define MYFS_SUPER_BLOCK_SIZE (sizeof(struct myfs_super_block))

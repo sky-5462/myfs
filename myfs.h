@@ -62,3 +62,12 @@ struct myfs_dentry {
     super | inode_bitmap | inode_region | data_bitmap | data_region |
 */
 
+
+#ifndef FORMAT_INCLUDE
+extern const struct file_operations myfs_dir_operations;
+extern const struct inode_operations myfs_dir_inode_operations;
+extern const struct inode_operations myfs_file_inode_operations;
+extern const struct file_operations myfs_file_operations;
+extern const struct inode_operations myfs_symlink_inode_operations;
+extern const struct address_space_operations myfs_aops;
+#endif
